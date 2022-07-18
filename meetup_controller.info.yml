@@ -1,0 +1,4 @@
+name: Meetup Up Events Module
+description: Meetup Up event list module
+type: module
+core: 8.x

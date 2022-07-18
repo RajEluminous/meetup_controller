@@ -1,0 +1,7 @@
+meetup_controller.article_list:
+  path: '/locations/{city}/events' 
+  defaults:
+    _controller: '\Drupal\meetup_controller\Controller\ArticleController::page'
+    _title: 'Our custom meetup event list'
+  requirements:
+    _permission: 'access content'

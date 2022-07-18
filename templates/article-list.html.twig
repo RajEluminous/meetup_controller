@@ -1,0 +1,60 @@
+<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.0/bootstrap-table.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css'>
+<link rel='stylesheet' href='https://cdn.datatables.net/responsive/1.0.4/css/dataTables.responsive.css'>
+
+<!--<h4>{{ title }}</h4><ul>
+{% for article in items %}
+  <li>{{ article.name }}</li>
+{% endfor %}
+</ul>-->
+
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>               
+				<th style="text-align:left">Event Name</th>
+				<th style="text-align:left">Date</th>
+				<th style="text-align:left">Time</th>
+                <th style="text-align:left">Members</th> 				 	
+			    <th style="text-align:left">Description</th>			 
+            </tr>
+        </thead> 
+        <tfoot>				 
+				<th style="text-align:left">Event Name</th>
+				<th style="text-align:left">Date</th>
+				<th style="text-align:left">Time</th>
+                <th style="text-align:left">Members</th> 				 	
+			    <th style="text-align:left">Description</th>				 
+        </tfoot> 
+        <tbody>		
+		{% for article in items %}				 
+			<tr>
+				<td><a href="{{ article.link }}" target="_blank">{{ article.name }}</a></td>	
+				<td>{{ article.local_date }}</td>
+				<td>{{ article.local_time }}</td>
+				<td>{{ article.yes_rsvp_count }}</td>
+				<td>{{ article.description }}</td>	
+			</tr>	
+		{% endfor %}
+        </tbody>
+    </table>
+	  </td>
+	  
+	</tr>
+</table>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js'></script>
+<script >$(document).ready(function () {
+    $('#example').DataTable({ 
+		"columns": [
+				{ "width": "25%" },	
+				{ "width": "10%","orderable": false },	
+				{ "width": "10%" },
+				{ "width": "10%","orderable": false }, 
+				null 	 
+			  ],
+	});
+}); 
+</script> 
